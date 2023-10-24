@@ -13,3 +13,6 @@ class Task(models.Model):
      end = models.DateTimeField()
      description = models.CharField(max_length=256, default='')
      done = models.BooleanField(default=False)
+
+class Kategorii(models.Model):
+     kategoriya = models.CharField(max_length=20, unique=True)
