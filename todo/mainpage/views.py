@@ -1,30 +1,18 @@
 from django.shortcuts import render
 from .models import Task
+from .models import Kategorii
 
 
 def index(request):
     result = ""
-   # for t in Task.objects.all():
-    #    result += t.description
-    kateg = ""    
+
+    kateg = ""
     for a in Kategorii.objects.all():
-        kateg += a.kategoriya    
+        kateg += a.kategoriya
     return render(
         request,
         "mainpage/index.html",
-        {"Задачи": Task.objects.all(), "Категории": kateg} # Kонтекст передаваемых переменных
-   
+        # Kонтекст передаваемых переменных
+        {"Задачи": Task.objects.all(), "Категории": kateg}
+
     )
-
-
-
-from .models import Kategorii
-
-
-#def index(request):
-
- #   return render(
- #       request,
- #       "mainpage/index.html",
- #       {"zadachi":Kategorii.objects.all()}
-   # )
