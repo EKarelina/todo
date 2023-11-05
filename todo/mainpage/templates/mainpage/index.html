@@ -1,13 +1,21 @@
-<link rel='stylesheet' href='style.css'>
+{% load static %}
+<link href="{% static 'style.css' %}" rel="stylesheet">
+<script src="{% static 'index.js' %}"></script>
+
 <h1>Hi Kate</h1>
-<p>{{Задачи}}</p>
-<ol>
+
+<table border="1">
     {% for задача in Задачи %}
+    <tr>
+        <th>{{задача.description}}</th>
+        <td>{{задача.start}}</td>
+        <td>{{задача.end}}</td>
+    </tr>
     {% if задача.done %}
     <li style="background-color: chartreuse;"><s>{{задача.description}}</s></li>
     {% else %}
     <li>{{задача.description}}</li>
     {% endif %}
     {% endfor %}
-</ol>
-<h2>{{Категории}}</h2>
+</table>
+<input type="button" onclick="cry()" value="Пуск" />
