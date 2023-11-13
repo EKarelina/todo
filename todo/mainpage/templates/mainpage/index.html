@@ -1,3 +1,8 @@
+{% extends "mainpage/header_footer.html" %}
+{% block content %}
+{% include "mainpage/main_menu.html" %}
+{% comment %} ЗДЕСЬ ВСЁ, ЧТО И ТАК БЫЛО В ШАБЛОНАХ spisok_del.html и shopping_list.html РАНЬШЕ {% endcomment %}
+
 {% load static %}
 <link href="{% static 'style.css' %}" rel="stylesheet">
 <script src="{% static 'index.js' %}"></script>
@@ -7,15 +12,15 @@
 <table border="1">
     {% for задача in Задачи %}
     <tr>
+        {% if задача.done %}
+        <td style="background-color: rgb(133, 241, 26);"><s>{{задача.description}}</s></td>
+        {% else %}
         <th>{{задача.description}}</th>
+        {% endif %}
         <td>{{задача.start}}</td>
         <td>{{задача.end}}</td>
+        {% endfor %}
     </tr>
-    {% if задача.done %}
-    <li style="background-color: chartreuse;"><s>{{задача.description}}</s></li>
-    {% else %}
-    <li>{{задача.description}}</li>
-    {% endif %}
-    {% endfor %}
 </table>
 <input type="button" onclick="cry()" value="Пуск" />
+{% endblock %}

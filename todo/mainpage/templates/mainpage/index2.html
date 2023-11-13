@@ -1,0 +1,105 @@
+{% extends "mainpage/header_footer.html" %}
+{% block content %}
+{% include "mainpage/main_menu.html" %}
+
+
+{% load static %}
+<link href="{% static 'style2.css' %}" rel="stylesheet">
+<script src="{% static 'index2.js' %}"></script>
+
+<body>
+    <h1>ТОВАРЫ</h1>
+
+    <section>
+        <div class="content">
+            <div>
+                <img src="{% static 'images/apricot.jpg' %}" alt="Абрикосы" width="200px" height="150px">
+                <p>Цена=200руб</p>
+                <button class="button-primary plus" data-id="apricot">+</button>
+                <button class="button-primary minus" data-id="apricot">-</button>
+                <p></p>
+            </div>
+            <div>
+                <img src="{% static 'images/blueberry.jpg' %}" alt="Голубика" width="200px" height="150px">
+                <p>Цена=300руб</p>
+
+                <button class="button-primary plus" data-id="blueberry">+</button>
+                <button class="button-primary minus" data-id="blueberry">-</button>
+                <p></p>
+            </div>
+
+            <div>
+                <img src="{% static 'images/pear.jpg' %}" alt="Груши" width="200px" height="150px">
+                <p>Цена=200руб</p>
+                <button class="button-primary plus" data-id="pear">+</button>
+                <button class="button-primary minus" data-id="pear">-</button>
+                <p></p>
+            </div>
+
+            <div>
+                <img src="{% static 'images/cherry.jpg'%}" alt="Черешня" width="200px" height="150px">
+                <p>Цена=200руб</p>
+                <button class="button-primary plus" data-id="cherry">+</button>
+                <button class="button-primary minus" data-id="cherry">-</button>
+                <p></p>
+            </div>
+
+            <div>
+                <img src="{% static 'images/mashrooms.jpg'%}" alt="Грибы" width="200px" height="150px">
+                <p>Цена=200руб</p>
+                <button class="button-primary plus" data-id="mashrooms">+</button>
+                <button class="button-primary minus" data-id="mashrooms">-</button>
+                <p></p>
+            </div>
+            <div>
+                <img src="{% static 'images/pistachio.jpg' %}" alt="Фисташки" width="200px" height="150px">
+                <p>Цена=200руб</p>
+                <button class="button-primary plus" data-id="pistachio">+</button>
+                <button class="button-primary minus" data-id="pistachio">-</button>
+                <p></p>
+            </div>
+            <div>
+                <img src="{% static 'images/fig.jpg' %}" alt="Инжир" width="200px" height="150px">
+                <p>Цена=200руб</p>
+                <button class="button-primary plus" data-id="fig">+</button>
+                <button class="button-primary minus" data-id="fig">-</button>
+                <p></p>
+            </div>
+
+            <div>
+                <img src="{% static 'images/granat.jpg' %}" alt="Гранат" width="200px" height="150px">
+                <p>Цена=200руб</p>
+                <button class="button-primary plus" data-id="granat">+</button>
+                <button class="button-primary minus" data-id="granat">-</button>
+                <p></p>
+            </div>
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+
+        <table border="1">
+            {% for товар in Товары %}
+            <tr>
+                <th><img width="70px" height="50px" src="/static/images/{{товар.picture}}"></th>
+                <th>{{товар.namegoods}}</th>
+                <th>{{товар.price}}</th>
+
+                {% endfor %}
+
+                <th id="kolichvo">Количество</th>
+                <th id="stoimt">Стоимость</th>
+                <th id="itogo" colSpan=5>Итого</th>
+
+            </tr>
+
+        </table>
+
+
+        <input type="button" id="dobav" value="Добавить" onclick="save()" />
+
+        <input type="button" onclick="itogo()" value="Итого:" />
+
+</body>
+
+{% endblock %}

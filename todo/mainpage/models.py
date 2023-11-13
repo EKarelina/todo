@@ -17,3 +17,11 @@ class Task(models.Model):
 
 class Kategorii(models.Model):
     kategoriya = models.CharField(max_length=20, unique=True)
+
+
+class Goods(models.Model):
+    picture = models.ImageField()
+    namegoods = models.CharField(max_length=20)
+    price = models.FloatField()
+    quantity = models.FloatField()
+    pricetotal = models.FloatField()

@@ -20,4 +20,11 @@ from mainpage import views
 urlpatterns = [
     path("", views.index),
     path('admin/', admin.site.urls),
+    path('shopping/', views.pokupki),
+
+]
+
+navset = [
+    {'url': '/',         'text': 'MAIN',     'active': False},
+    {'url': '/shopping', 'text': 'Shopping', 'active': False},
 ]

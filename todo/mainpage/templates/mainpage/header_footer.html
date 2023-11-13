@@ -1,0 +1,9 @@
+{% load static %}
+<link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}" />
+<link href="{% static 'style/razmeshenie.css' %}" rel="stylesheet">
+<link href="{% static 'style/krasota.css' %}" rel="stylesheet">
+<header>
+    <h1>Заголовок экстраординарного сайта</h1>
+</header>
+{% block content %}{% endblock %}
+<footer> {% now "Y" %} © Вася, крутой разработчик </footer>

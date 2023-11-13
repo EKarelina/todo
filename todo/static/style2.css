@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(169, 219, 202);
+}
+
+.content {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 360px);
+    grid-gap: 20px;
+
+}

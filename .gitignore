@@ -1,1 +1,9 @@
 /Pipfile.lock
+*.jpg 
+*.jpeg
+*.png
+
+
+*.pyc
+__pycache__
+migrations

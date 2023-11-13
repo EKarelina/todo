@@ -1,0 +1,13 @@
+div#mainmenu ul {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div#mainmenu li {
+    display: inline;
+}
+
+div#mainmenu li>a {
+    line-height: 30px;
+}

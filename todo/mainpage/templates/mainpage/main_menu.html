@@ -1,0 +1,16 @@
+{% load static %}
+<link href="{% static 'style/horizontal_menu.css' %}" rel="stylesheet">
+<link href="{% static 'style/menu.css' %}" rel="stylesheet">
+<div id="mainmenu">
+    <ul>
+        {% for nav in navset %}
+        {% if nav.active %}
+        <li class="active">
+            {% else %}
+        <li>
+            {% endif %}
+            <a href="{{nav.url}}">{{nav.text}}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
